@@ -1,0 +1,3 @@
+POST           /upload                                                      controllers.ImageController.upload()
+GET            /get-image/:id                                               controllers.ImageController.getImage(id: String)
+GET            /get-image-by-name/:name                                     controllers.ImageController.getImageByName(name: String)

@@ -5,6 +5,7 @@
  */
 package com.encentral.scaffold.binder;
 
+import com.encentral.imageconverter.impl.ImageModule;
 import com.google.inject.AbstractModule;
 import play.libs.akka.AkkaGuiceSupport;
 
@@ -21,6 +22,7 @@ public class Module extends AbstractModule implements AkkaGuiceSupport {
         super.configure();
 
         bind(BigBang.class).asEagerSingleton();
+        install(new ImageModule());
 
     }
 }

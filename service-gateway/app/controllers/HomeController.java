@@ -1,16 +1,19 @@
 package controllers;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.bval.jsr.ApacheValidationProvider;
-import org.hibernate.validator.HibernateValidator;
-import play.db.jpa.Transactional;
+
+
 import play.mvc.Controller;
+
 import play.mvc.Result;
+import play.db.jpa.Transactional;
 
 import javax.inject.Inject;
 import javax.validation.Validation;
-import javax.validation.Validator;
 
+
+import play.data.FormFactory;
 /**
  * This controller contains an action to handle HTTP requests to the
  * application's home page.
@@ -20,6 +23,13 @@ public class HomeController extends Controller {
 
     @Inject
     ObjectMapper objectMapper;
+
+
+
+
+    @Inject
+    FormFactory formFactory;
+
 
     public Result index() {
         return ok(Validation.byDefaultProvider()
@@ -39,6 +49,8 @@ public class HomeController extends Controller {
         response().setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Referer, User-Agent, Authorization");
         return noContent();
     }
+
+
 
     public Result swagger() {
         return ok(views.html.swagger.render());
