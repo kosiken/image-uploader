@@ -9,12 +9,7 @@ import com.encentral.scaffold.entities.JpaImage;
 import com.encentral.scaffold.entities.QJpaImage;
 import com.google.common.base.Preconditions;
 import com.google.inject.Inject;
-import com.querydsl.core.QueryFactory;
-import com.querydsl.jpa.impl.JPAQueryFactory;
 import play.db.jpa.JPAApi;
-
-
-import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.io.File;
 import java.io.IOException;
